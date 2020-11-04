@@ -1,0 +1,106 @@
+﻿@model WebApplication1.Models.nilAkhir
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>nilAkhir</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sekolahCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sekolahCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kelasCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kelasCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mapelCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mapelCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nilKI3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nilKI3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nilKI4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nilKI4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nilSikap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nilSikap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nilUts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nilUts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nilUas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nilUas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nilNaKI3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nilNaKI3)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.nilAkhirCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

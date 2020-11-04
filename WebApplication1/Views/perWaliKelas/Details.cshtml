@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Models.perWaliKelas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>perWaliKelas</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.namaWaliKelas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namaWaliKelas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kotaWaliKelas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kotaWaliKelas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alamatWaliKelas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alamatWaliKelas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.noTeleponWaliKelas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.noTeleponWaliKelas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.nik }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

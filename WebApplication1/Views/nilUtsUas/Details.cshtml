@@ -1,0 +1,74 @@
+﻿@model WebApplication1.Models.nilUtsUas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>nilUtsUas</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sekolahCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sekolahCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kelasCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kelasCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mapelCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mapelCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nilaiUts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nilaiUts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nilaiUas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nilaiUas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.utsUasCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

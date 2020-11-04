@@ -1,0 +1,98 @@
+﻿@model WebApplication1.Models.nilPengetahuanKognitifKI3
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>nilPengetahuanKognitifKI3</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sekolahCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sekolahCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kelasCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kelasCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mapelCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mapelCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KI3nilaiSatu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KI3nilaiSatu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KI3nilaiDua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KI3nilaiDua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KI3nilaiTiga)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KI3nilaiTiga)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KI3nilaiEmpat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KI3nilaiEmpat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KI3nilaiTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KI3nilaiTotal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KI3Code }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

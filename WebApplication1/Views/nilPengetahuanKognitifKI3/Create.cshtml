@@ -1,0 +1,105 @@
+﻿@model WebApplication1.Models.nilPengetahuanKognitifKI3
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>nilPengetahuanKognitifKI3</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sekolahCode, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("sekolahCode", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.sekolahCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kelasCode, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("kelasCode", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.kelasCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nis, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("nis", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.nis)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.mapelCode, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("mapelCode", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.mapelCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nik, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("nik", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.nik)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KI3nilaiSatu, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.KI3nilaiSatu)
+                @Html.ValidationMessageFor(model => model.KI3nilaiSatu)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KI3nilaiDua, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.KI3nilaiDua)
+                @Html.ValidationMessageFor(model => model.KI3nilaiDua)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KI3nilaiTiga, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.KI3nilaiTiga)
+                @Html.ValidationMessageFor(model => model.KI3nilaiTiga)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KI3nilaiEmpat, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.KI3nilaiEmpat)
+                @Html.ValidationMessageFor(model => model.KI3nilaiEmpat)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

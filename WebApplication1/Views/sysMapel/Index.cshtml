@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplication1.Models.sysMapel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="example" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.mapelCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.namaMapel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mapelCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.namaMapel)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.mapelCode }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.mapelCode }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.mapelCode })
+                </td>
+            </tr>
+        }
+
+</table>

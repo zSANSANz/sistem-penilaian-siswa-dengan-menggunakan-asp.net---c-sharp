@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Models.perGuru
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>perGuru</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.namaGuru)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namaGuru)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kotaGuru)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kotaGuru)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alamatGuru)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alamatGuru)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.noTeleponGuru)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.noTeleponGuru)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.nik }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

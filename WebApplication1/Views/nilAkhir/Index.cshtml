@@ -1,0 +1,99 @@
+﻿@model IEnumerable<WebApplication1.Models.nilAkhir>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nilAkhirCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sekolahCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kelasCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mapelCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nilKI3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nilKI4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nilSikap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nilUts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nilUas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nilNaKI3)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nilAkhirCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sekolahCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kelasCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mapelCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nilKI3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nilKI4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nilSikap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nilUts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nilUas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nilNaKI3)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.nilAkhirCode }) |
+            @Html.ActionLink("Details", "Details", new { id=item.nilAkhirCode }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.nilAkhirCode })
+        </td>
+    </tr>
+}
+
+</table>

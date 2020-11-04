@@ -1,0 +1,27 @@
+﻿@model WebApplication1.Models.person
+
+@{
+    ViewBag.Title = "logOut";
+}
+
+<h2>logOut</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h5>Anda Yakin Untuk Keluar?</h5>
+        <hr />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Log Out" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Sistem Informasi Akademik Penilaian Siswa</title>
+
+    @Styles.Render("~/Content/css")
+    @section Styles {
+        <link href="@Url.Content("~/Content/DataTables/media/css/jquery.dataTables.min.css")" rel="stylesheet" type="text/css" />
+    }   
+    
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts")
+
+    <!-- JQUERY -->
+    
+    
+</head>
+<body>
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                
+
+                @{
+                    string jabatan = (string)HttpContext.Current.Session["jabatan"];
+                }
+
+                @if (@jabatan == "admin")
+                {
+                    <ul class="nav navbar-nav">
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Home<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("home", "index", "home")</li>
+                                <li>@Html.ActionLink("contact", "contact", "home")</li>
+                                <li>@Html.ActionLink("about", "about", "home")</li>
+                            </ul>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Data User<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("admin", "index", "perAdmin")</li>
+                                <li>@Html.ActionLink("siswa", "index", "perSiswa")</li>
+                                <li>@Html.ActionLink("guru", "index", "perGuru")</li>
+                                <li>@Html.ActionLink("waliKelas", "index", "perWaliKelas")</li>
+                            </ul>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Data System<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("mapel", "index", "sysMapel")</li>
+                                <li>@Html.ActionLink("kelas", "index", "sysKelas")</li>
+                                <li>@Html.ActionLink("sekolah", "index", "sysSekolah")</li>
+                            </ul>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Nilai Administrator <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("KI1KI2", "index", "nilSikapKI1KI2")</li>
+                                <li>@Html.ActionLink("KI3", "index", "nilPengetahuanKognitifKI3")</li>
+                                <li>@Html.ActionLink("KI4", "index", "nilKetrampilanPsikomotorikKI4")</li>
+                                <li>@Html.ActionLink("UtsUas", "index", "nilUtsUas")</li>
+                                <li>@Html.ActionLink("nilaiAkhir", "index", "nilAkhir")</li>
+                            </ul>
+                        </li>
+
+                        <li role="presentation" class="dropdown">
+                            @Html.ActionLink("pengguna", "index", "person")
+                        </li>
+                    </ul>
+
+
+                }
+                else if (@jabatan == "siswa")
+                {
+                    <ul class="nav navbar-nav">
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Home<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("home", "index", "home")</li>
+                                <li>@Html.ActionLink("contact", "contact", "home")</li>
+                                <li>@Html.ActionLink("about", "about", "home")</li>
+                            </ul>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            @Html.ActionLink("data Siswa", "index", "perSiswa")
+                        </li>
+
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Lihat Nilai<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("KI1KI2", "index", "nilSikapKI1KI2")</li>
+                                <li>@Html.ActionLink("KI3", "index", "nilPengetahuanKognitifKI3")</li>
+                                <li>@Html.ActionLink("KI4", "index", "nilKetrampilanPsikomotorikKI4")</li>
+                                <li>@Html.ActionLink("UtsUas", "index", "nilUtsUas")</li>
+                                <li>@Html.ActionLink("nilaiAkhir", "index", "nilAkhir")</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                }
+                else if (@jabatan == "guru")
+                {
+                    <ul class="nav navbar-nav">
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Home<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("home", "index", "home")</li>
+                                <li>@Html.ActionLink("home", "contact", "contact")</li>
+                                <li>@Html.ActionLink("home", "about", "about")</li>
+                            </ul>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            @Html.ActionLink("data Guru", "index", "perGuru")
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Input Nilai <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("KI1KI2", "index", "nilSikapKI1KI2")</li>
+                                <li>@Html.ActionLink("KI3", "index", "nilPengetahuanKognitifKI3")</li>
+                                <li>@Html.ActionLink("KI4", "index", "nilKetrampilanPsikomotorikKI4")</li>
+                                <li>@Html.ActionLink("UtsUas", "index", "nilUtsUas")</li>
+                                <li>@Html.ActionLink("nilaiAkhir", "index", "nilAkhir")</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                }
+                else if (@jabatan == "wali")
+                {
+                    <ul class="nav navbar-nav">
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Home<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("home", "index", "home")</li>
+                                <li>@Html.ActionLink("contact", "contact", "home")</li>
+                                <li>@Html.ActionLink("about", "about", "home")</li>
+                            </ul>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            @Html.ActionLink("data waliKelas", "index", "perWaliKelas")
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Lihat Nilai Kelas <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("KI1KI2", "index", "nilSikapKI1KI2")</li>
+                                <li>@Html.ActionLink("KI3", "index", "nilPengetahuanKognitifKI3")</li>
+                                <li>@Html.ActionLink("KI4", "index", "nilKetrampilanPsikomotorikKI4")</li>
+                                <li>@Html.ActionLink("UtsUas", "index", "nilUtsUas")</li>
+                                <li>@Html.ActionLink("nilaiAkhir", "index", "nilAkhir")</li>
+                            </ul>
+                        </li>
+                        <li role="presentation" class="dropdown">
+                            @Html.ActionLink("Rapor", "index", "person")
+                        </li>
+                    </ul>
+
+                }
+
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p class="btn-success">@Session["user"]</p>
+                    </li>
+                    <li>
+
+
+                        @if (Session["user"] == null)
+                        {
+                            @Html.ActionLink("Log in", "LogOn", "Account", new { area = "Backend" }, null)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Log Out", "logOut", "Account", new { area = "Backend" }, null)
+                        }
+
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+
+
+
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        <hr />
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Sistem Informasi Akademik Penilaian Siswa</p>
+        </footer>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

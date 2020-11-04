@@ -1,0 +1,73 @@
+﻿@model WebApplication1.Models.sysSekolah
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>sysSekolah</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sekolahCode, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sekolahCode)
+                @Html.ValidationMessageFor(model => model.sekolahCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.namaSekolah, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.namaSekolah)
+                @Html.ValidationMessageFor(model => model.namaSekolah)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kotaSekolah, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.kotaSekolah)
+                @Html.ValidationMessageFor(model => model.kotaSekolah)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.alamatSekolah, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.alamatSekolah)
+                @Html.ValidationMessageFor(model => model.alamatSekolah)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.noTeleponSekolah, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.noTeleponSekolah)
+                @Html.ValidationMessageFor(model => model.noTeleponSekolah)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

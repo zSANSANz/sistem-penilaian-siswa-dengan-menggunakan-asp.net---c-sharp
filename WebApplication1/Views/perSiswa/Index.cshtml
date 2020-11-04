@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebApplication1.Models.perSiswa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.namaSiswa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kotaSiswa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alamatSiswa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.noTeleponSiswa)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.namaSiswa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kotaSiswa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alamatSiswa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.noTeleponSiswa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.nis }) |
+            @Html.ActionLink("Details", "Details", new { id=item.nis }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.nis })
+        </td>
+    </tr>
+}
+
+</table>

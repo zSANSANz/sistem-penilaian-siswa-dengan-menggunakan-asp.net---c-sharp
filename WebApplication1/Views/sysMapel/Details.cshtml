@@ -1,0 +1,26 @@
+﻿@model WebApplication1.Models.sysMapel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>sysMapel</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.namaMapel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namaMapel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.mapelCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

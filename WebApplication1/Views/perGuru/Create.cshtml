@@ -1,0 +1,81 @@
+﻿@model WebApplication1.Models.perGuru
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>perGuru</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.nik, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nik)
+                @Html.ValidationMessageFor(model => model.nik)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.username, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("username", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.username)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.namaGuru, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.namaGuru)
+                @Html.ValidationMessageFor(model => model.namaGuru)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.kotaGuru, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.kotaGuru)
+                @Html.ValidationMessageFor(model => model.kotaGuru)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.alamatGuru, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.alamatGuru)
+                @Html.ValidationMessageFor(model => model.alamatGuru)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.noTeleponGuru, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.noTeleponGuru)
+                @Html.ValidationMessageFor(model => model.noTeleponGuru)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

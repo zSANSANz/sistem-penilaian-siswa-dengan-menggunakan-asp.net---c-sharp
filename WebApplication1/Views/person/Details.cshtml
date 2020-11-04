@@ -1,0 +1,50 @@
+﻿@model WebApplication1.Models.person
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>person</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jabatan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jabatan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pertanyaan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pertanyaan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jawaban)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jawaban)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.username }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

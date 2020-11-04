@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication1.Models.sysSekolah>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sekolahCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.namaSekolah)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kotaSekolah)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alamatSekolah)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.noTeleponSekolah)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sekolahCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.namaSekolah)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kotaSekolah)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alamatSekolah)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.noTeleponSekolah)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.sekolahCode }) |
+            @Html.ActionLink("Details", "Details", new { id=item.sekolahCode }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.sekolahCode })
+        </td>
+    </tr>
+}
+
+</table>

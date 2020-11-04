@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebApplication1.Models.nilPengetahuanKognitifKI3>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KI3Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sekolahCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kelasCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mapelCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KI3nilaiSatu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KI3nilaiDua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KI3nilaiTiga)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KI3nilaiEmpat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KI3nilaiTotal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KI3Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sekolahCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kelasCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mapelCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KI3nilaiSatu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KI3nilaiDua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KI3nilaiTiga)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KI3nilaiEmpat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KI3nilaiTotal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KI3Code }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KI3Code }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KI3Code })
+        </td>
+    </tr>
+}
+
+</table>

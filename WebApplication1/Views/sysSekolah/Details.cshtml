@@ -1,0 +1,50 @@
+﻿@model WebApplication1.Models.sysSekolah
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>sysSekolah</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.namaSekolah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namaSekolah)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kotaSekolah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kotaSekolah)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alamatSekolah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alamatSekolah)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.noTeleponSekolah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.noTeleponSekolah)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.sekolahCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

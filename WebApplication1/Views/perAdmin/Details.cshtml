@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Models.perAdmin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>perAdmin</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.namaAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namaAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kotaAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kotaAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.alamatAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.alamatAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.noTeleponAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.noTeleponAdmin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.adminCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
